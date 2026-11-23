@@ -1,0 +1,11 @@
+{
+  "user_agent": "script:reddit-atom-feeds:0.1",
+  "delay_seconds": 5,
+  "max_items_per_feed": 100,
+  "feeds": [
+    { "subreddit": "news", "sort": "hot", "limit": 25, "title": "r/news"},
+    { "subreddit": "worldnews", "sort": "hot", "limit": 25, "title": "r/worldnews"},
+    { "subreddit": "newjersey", "sort": "hot", "limit": 25, "title": "r/newjersey"}
+    { "subreddit": "news+worldnews+newjersey", "sort": "hot", "limit": 100, "title": "combined"}
+   ]
+}

@@ -5,7 +5,7 @@
   "feeds": [
     { "subreddit": "news", "sort": "hot", "limit": 25, "title": "r/news"},
     { "subreddit": "worldnews", "sort": "hot", "limit": 25, "title": "r/worldnews"},
-    { "subreddit": "newjersey", "sort": "hot", "limit": 25, "title": "r/newjersey"}
+    { "subreddit": "newjersey", "sort": "hot", "limit": 25, "title": "r/newjersey"},
     { "subreddit": "news+worldnews+newjersey", "sort": "hot", "limit": 100, "title": "combined"}
    ]
 }

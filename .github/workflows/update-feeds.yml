@@ -1,0 +1,36 @@
+name: Update feeds
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-feeds
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch subreddits and build feeds
+        run: python3 fetch_feeds.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs state
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update feeds"
+            git pull --rebase
+            git push
+          fi
